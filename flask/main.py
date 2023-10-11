@@ -10,16 +10,14 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/contatos")
-def contatos():
-    return render_template("contatos.html")
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
-@app.route("/clientes/<nome_cliente>")
-def clientes(nome_cliente):
-    return render_template("clientes.html", nome_cliente=nome_cliente)
+@app.route("/client/<client_name>")
+def client(client_name):
+    return render_template("client.html", client_name=client_name)
 
 #Colocar o site no ar
 if __name__ == "__main__":
     app.run(debug=True)
-
-# servidor do heroku
