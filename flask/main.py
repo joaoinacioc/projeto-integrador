@@ -10,13 +10,13 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/contact")
+@app.route("/contatos")
 def contact():
-    return render_template("contact.html")
+    return render_template("contatos.html")
 
-@app.route("/client/<client_name>")
+@app.route("/cliente/<client_name>")
 def client(client_name):
-    return render_template("client.html", client_name=client_name)
+    return render_template("cliente.html", client_name=client_name)
 
 #Colocar o site no ar
 if __name__ == "__main__":
