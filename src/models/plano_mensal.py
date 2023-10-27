@@ -15,5 +15,8 @@ class PlanoMensal(db.Model):
     preco = db.Column(db.Float, nullable=False)
 
     # method used to represent a class's objects as a string
-    def __repr__(self):
-        return '<id_plano %r>' % self.id_plano
+    def __init__(self, id_plano, nome, descricao, preco):
+        self.id_plano = id_plano
+        self.nome = nome
+        self.descricao = descricao
+        self.preco = preco
