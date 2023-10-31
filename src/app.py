@@ -13,9 +13,9 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/cliente/<client_name>")
-def client(client_name):
-   return render_template("cliente.html", client_name=client_name)
+@app.route("/cliente/<nome_cliente>")
+def client(nome_cliente):
+   return render_template("cliente.html", nome_cliente=nome_cliente)
 
 
 if __name__ == "__main__":
