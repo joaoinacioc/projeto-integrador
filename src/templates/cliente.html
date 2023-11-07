@@ -2,9 +2,41 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil do Cliente</title>
+    <title>Perfil do cliente</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
-    <p>Meu nome é {{nome_clinte}}</p>
+    <header class="header">
+        <a href="/" class="logo">
+            <i class="fas fa-dumbbell"></i>FitNess
+        </a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="max-width">
+            <div class="home-content">
+                <h4>Consultar Ficha</h4>
+                <button class="btn" onclick="location.href='/ficha-treino'">Consultar</button>
+                <h4>Alterar Plano</h4>
+                <form method="put">
+                    <div>
+                        <label for="plano_mensal">Selecione um plano:</label>
+                        <select id="plano_mensal" name="plano_mensal">
+                            <option value="1">Básico</option>
+                            <option value="2">VIP</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="home-image">
+                <img src="../static/images/bg.jpg">
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
