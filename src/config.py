@@ -1,5 +1,5 @@
 import os
-
+from flask_sqlalchemy import SQLAlchemy
 # Each Flask web application contains a secret key which used to sign session cookies for protection against cookie data tampering.
 SECRET_KEY = os.urandom(32)
 
@@ -15,3 +15,5 @@ SQLALCHEMY_DATABASE_URI = 'mysql://root:@localhost:3306/projeto-integrador'
 
 # Turn off the Flask-SQLAlchemy event system and warning
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+db = SQLAlchemy()

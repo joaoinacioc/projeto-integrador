@@ -1,10 +1,12 @@
 import json
-from models.cliente import Cliente, db
-from models.plano_mensal import PlanoMensal, db
-from models.forma_pagamento import FormaPagamento, db
-from models.ficha_treino import Ficha_Treino, db
-from models.instrutor import  Instrutor, db
-from models.feito import Feito, db
+from models.cliente import Cliente
+from models.plano_mensal import PlanoMensal
+from models.forma_pagamento import FormaPagamento
+from models.ficha_treino import Ficha_Treino
+from models.instrutor import  Instrutor
+from src.config import db
+
+from models.feito import Feito
 #def create_logic():
     #try:
         # create tables if not exists.
@@ -21,10 +23,8 @@ def insert_logic():
     data = json.load(open("data.json", 'r'))
 
 
-    cliente = Cliente(id_client=data['id_cliente'], nome=data['nome'], sobrenome=data['sobrenome'], cpf=data['cpf'],
-                      data_nascimento=data['data_nascimento'], email=data['email'], senha=data['senha'], telefone=data['telefone'],
-                      fk_Plano_mensal=data['fk_Plano_Mensal']
-                      )
+    cliente = Cliente(nome=data['nome'], sobrenome=data['sobrenome'], cpf=data['cpf'],
+                      data_nascimento=data['data_nascimento'], email=data['email'], senha=data['senha'], telefone=data['telefone'])
 
 
     forma_pagamento = FormaPagamento(id_forma_pagamento=data['id_forma_pagamento'],

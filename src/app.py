@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+'''from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from routes.blueprint import blueprint
 from models.cliente import db
 
-'''app = Flask(__name__)
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://'
 
 
@@ -19,7 +19,7 @@ def client(nome_cliente):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)'''
+    app.run(debug=True)
 
 def create_app():
    app = Flask(__name__)  # flask app object
@@ -36,4 +36,24 @@ migrate = Migrate(app, db)  # Initializing the migration
 
 
 if __name__ == '__main__':  # Running the app
+    app.run(host='127.0.0.1', port=5000, debug=True)
+'''
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from src.config import db
+from flask_migrate import Migrate
+
+
+app = Flask(__name__)
+
+app.config.from_object('config')
+
+db.init_app(app)
+
+from routes.blueprint import blueprint  # Importe o blueprint aqui
+
+app.register_blueprint(blueprint, url_prefix='/')
+migrate = Migrate(app, db)
+
+if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

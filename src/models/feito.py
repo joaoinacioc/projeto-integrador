@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+from src.config import db
 
 # Creating the Inserttable for inserting data into the database
 

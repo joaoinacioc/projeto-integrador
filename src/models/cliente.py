@@ -1,10 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
-
-# Creating the Inserttable for inserting data into the database
-
-
+from src.config import db
 class Cliente(db.Model):
     '''Data for ON/OFF should be dumped in this table.'''
     __tablename__ = 'cliente'
@@ -16,14 +11,11 @@ class Cliente(db.Model):
     email = db.Column(db.String(100), nullable=False)
     senha = db.Column(db.String(50), nullable=False)
     telefone = db.Column(db.String(20), nullable=False)
-    fk_Plano_Mensal = db.Column(db.Integer, primary_key=False)
-    def __init__(self, id_cliente, nome, sobrenome, cpf, data_nascimento, email, senha, telefone, fk_Plano_Mensal):
-        self.id_cliente = id_cliente
+    def __init__(self, nome, sobrenome, cpf, data_nascimento, email, senha, telefone):
         self.nome = nome
         self.sobrenome = sobrenome
         self.cpf = cpf
         self.data_nascimento = data_nascimento
         self.email = email
         self.senha = senha
-        self.telefone =  telefone
-        self.fk_Plano_Mensal = fk_Plano_Mensal
+        self.telefone = telefone
