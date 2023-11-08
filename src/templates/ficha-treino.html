@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil do cliente</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">
+            <i class="fas fa-dumbbell"></i>FitNess
+        </a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="max-width">
+            <div class="home-content">
+                <!-- use {{}} to access the render_template vars-->
+                <p>{{ficha_treino.data_criacao}}</p>
+                <p>{{ficha_treino.descricao}}</p>
+                <p>{{ficha_treino.duracao_treino}}</p>
+                <p>{{ficha_treino.ombro_lateral}}</p>
+                <p>{{ficha_treino.ombro_frontal}}</p>
+                <p>{{ficha_treino.supino_reto}}</p>
+                <p>{{ficha_treino.supino_inclinado}}</p>
+                <p>{{ficha_treino.crucifixo}}</p>
+                <p>{{ficha_treino.puxador_frontal}}</p>
+                <p>{{ficha_treino.puxador_costas}}</p>
+                <p>{{ficha_treino.remada_baixa}}</p>
+                <p>{{ficha_treino.remada_cavalo}}</p>
+                <p>{{ficha_treino.triceps_corda}}</p>
+                <p>{{ficha_treino.triceps_pulley}}</p>
+                <p>{{ficha_treino.rosca_biceps}}</p>
+                <p>{{ficha_treino.rosca_martelo}}</p>
+                <p>{{ficha_treino.agachamento}}</p>
+                <p>{{ficha_treino.legpress}}</p>
+                <p>{{ficha_treino.cadeira_extensora}}</p>
+                <p>{{ficha_treino.cadeira_flexora}}</p>
+                <p>{{ficha_treino.panturrilhas}}</p>
+                <p>{{ficha_treino.cardio}}</p>
+                <p>{{ficha_treino.luta}}</p>
+                <p>{{ficha_treino.fk_Cliente_id_cliente}}</p>
+            </div>
+            <div class="home-image">
+                <img src="../static/images/bg.jpg">
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
