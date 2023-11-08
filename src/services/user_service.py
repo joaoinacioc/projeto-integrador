@@ -63,3 +63,11 @@ def insert_logic():
     db.session.close()
     return '==================DATA INSERTED=================='
 
+from models.cliente import Cliente  # Importe o modelo Cliente
+
+def login_logic(email, senha):
+    # Consulte o banco de dados para verificar as credenciais
+    cliente = Cliente.query.filter_by(email=email, senha=senha).first()
+
+    # Se o cliente existir, as credenciais são válidas
+    return cliente is not None

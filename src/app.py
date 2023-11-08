@@ -45,7 +45,7 @@ from flask_migrate import Migrate
 
 
 app = Flask(__name__)
-
+app.secret_key = 'HIGUINA'
 app.config.from_object('config')
 
 db.init_app(app)

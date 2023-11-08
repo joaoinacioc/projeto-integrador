@@ -20,7 +20,12 @@
         <div class="max-width">
             <div class="home-content">
                 <h4>Consultar Ficha</h4>
-                <button class="btn" onclick="location.href='/ficha-treino'">Consultar</button>
+                <!-- Modificado para chamar a função para abrir a ficha de treino -->
+                <button class="btn" onclick="abrirFichaTreino()">Consultar</button>
+
+                <!-- Adicione esta div para exibir a ficha de treino -->
+                <div id="fichaTreinoDiv"></div>
+
                 <h4>Alterar Plano</h4>
                 <form method="put">
                     <div>
@@ -37,6 +42,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Modificado para chamar a função para abrir a ficha de treino -->
+    <script>
+        function abrirFichaTreino() {
+            // Redirecionar para a página de ficha treino
+            window.location.href = "/ficha_treino";
+        }
+    </script>
     
 </body>
 </html>

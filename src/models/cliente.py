@@ -11,7 +11,8 @@ class Cliente(db.Model):
     email = db.Column(db.String(100), nullable=False)
     senha = db.Column(db.String(50), nullable=False)
     telefone = db.Column(db.String(20), nullable=False)
-    def __init__(self, nome, sobrenome, cpf, data_nascimento, email, senha, telefone):
+    fk_Plano_Mensal_id_plano= db.Column(db.Integer, nullable=False)
+    def __init__(self, nome, sobrenome, cpf, data_nascimento, email, senha, telefone, fk_Plano_Mensal_id_plano):
         self.nome = nome
         self.sobrenome = sobrenome
         self.cpf = cpf
@@ -19,3 +20,4 @@ class Cliente(db.Model):
         self.email = email
         self.senha = senha
         self.telefone = telefone
+        self.fk_Plano_Mensal_id_plano = fk_Plano_Mensal_id_plano
