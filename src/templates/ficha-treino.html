@@ -2,47 +2,120 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil do cliente</title>
+    <title>Ficha de Treino</title>
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
-<body>
+<body style="background-color: black; color: white;">
     <header class="header">
         <a href="/" class="logo">
             <i class="fas fa-dumbbell"></i>FitNess
         </a>
         <nav class="navbar">
-            <a href="/">Home</a>
+            <a href="/cliente">Home</a>
         </nav>
     </header>
 
     <section class="home">
         <div class="max-width">
             <div class="home-content">
-                <p>Data de criação: {{ficha_treino.data_criacao}}</p>
-                <p>Descrição: {{ficha_treino.descricao}}</p>
-                <p>Duração do treino: {{ficha_treino.duracao_treino}}</p>
-                <p>Ombro lateral: {{ficha_treino.ombro_lateral}}</p>
-                <p>Ombro frontal: {{ficha_treino.ombro_frontal}}</p>
-                <p>Supino reto: {{ficha_treino.supino_reto}}</p>
-                <p>Supino inclinado: {{ficha_treino.supino_inclinado}}</p>
-                <p>Crucifixo: {{ficha_treino.crucifixo}}</p>
-                <p>Puxador frontal: {{ficha_treino.puxador_frontal}}</p>
-                <p>Puxador costas: {{ficha_treino.puxador_costas}}</p>
-                <p>Remada baixa: {{ficha_treino.remada_baixa}}</p>
-                <p>Remada cavalo: {{ficha_treino.remada_cavalo}}</p>
-                <p>Triceps corda: {{ficha_treino.triceps_corda}}</p>
-                <p>Triceps pulley: {{ficha_treino.triceps_pulley}}</p>
-                <p>Rosca biceps: {{ficha_treino.rosca_biceps}}</p>
-                <p>Rosca martelo: {{ficha_treino.rosca_martelo}}</p>
-                <p>Agachamento: {{ficha_treino.agachamento}}</p>
-                <p>Legpress: {{ficha_treino.legpress}}</p>
-                <p>Cadeira extensora: {{ficha_treino.cadeira_extensora}}</p>
-                <p>Cadeira flexora: {{ficha_treino.cadeira_flexora}}</p>
-                <p>Panturrilhas: {{ficha_treino.panturrilhas}}</p>
-                <p>Cardio: {{ficha_treino.cardio}}</p>
-                <p>Luta: {{ficha_treino.luta}}</p>
-                <p>Id do cliente: {{ficha_treino.fk_Cliente_id_cliente}}</p>
+                <form method="POST" action="{{ url_for('blueprint.atualizar_ficha_treino') }}">
+                    <div>
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao" value="{{ ficha_treino.descricao or '-' }}">
+                    </div>
+                    <div>
+                        <label for="duracao_treino">Duração do treino:</label>
+                        <input type="text" id="duracao_treino" name="duracao_treino" value="{{ ficha_treino.duracao_treino }}">
+                    </div>
+                    <div>
+                        <label for="ombro_lateral">Ombro lateral:</label>
+                        <input type="text" id="ombro_lateral" name="ombro_lateral" value="{{ ficha_treino.ombro_lateral or '-' }}">
+                    </div>
+                    <div>
+                        <label for="ombro_frontal">Ombro frontal:</label>
+                        <input type="text" id="ombro_frontal" name="ombro_frontal" value="{{ ficha_treino.ombro_frontal }}">
+                    </div>
+                    <div>
+                        <label for="supino_reto">Supino reto:</label>
+                        <input type="text" id="supino_reto" name="supino_reto" value="{{ ficha_treino.supino_reto }}">
+                    </div>
+                    <div>
+                        <label for="supino_inclinado">Supino inclinado:</label>
+                        <input type="text" id="supino_inclinado" name="supino_inclinado" value="{{ ficha_treino.supino_inclinado}}">
+                    </div>
+                    <div>
+                        <label for="crucifixo">Crucifixo:</label>
+                        <input type="text" id="crucifixo" name="crucifixo" value="{{ ficha_treino.crucifixo }}">
+                    </div>
+                    <div>
+                        <label for="puxador_frontal">Puxador frontal:</label>
+                        <input type="text" id="puxador_frontal" name="puxador_frontal" value="{{ ficha_treino.puxador_frontal}}">
+                    </div>
+                    <div>
+                        <label for="puxador_costas">Puxador costas:</label>
+                        <input type="text" id="puxador_costas" name="puxador_costas" value="{{ ficha_treino.puxador_costas }}">
+                    </div>
+                    <div>
+                        <label for="remada_baixa">Remada baixa:</label>
+                        <input type="text" id="remada_baixa" name="remada_baixa" value="{{ ficha_treino.remada_baixa }}">
+                    </div>
+                    <div>
+                        <label for="remada_cavalo">Remada cavalo:</label>
+                        <input type="text" id="remada_cavalo" name="remada_cavalo" value="{{ ficha_treino.remada_cavalo}}">
+                    </div>
+                    <div>
+                        <label for="triceps_corda">Triceps corda:</label>
+                        <input type="text" id="triceps_corda" name="triceps_corda" value="{{ ficha_treino.triceps_corda}}">
+                    </div>
+                    <div>
+                        <label for="triceps_pulley">Triceps pulley:</label>
+                        <input type="text" id="triceps_pulley" name="triceps_pulley" value="{{ ficha_treino.triceps_pulley}}">
+                    </div>
+                    <div>
+                        <label for="rosca_biceps">Rosca biceps:</label>
+                        <input type="text" id="rosca_biceps" name="rosca_biceps" value="{{ ficha_treino.rosca_biceps}}">
+                    </div>
+                    <div>
+                        <label for="rosca_martelo">Rosca martelo:</label>
+                        <input type="text" id="rosca_martelo" name="rosca_martelo" value="{{ ficha_treino.rosca_martelo}}">
+                    </div>
+                    <div>
+                        <label for="agachamento">Agachamento:</label>
+                        <input type="text" id="agachamento" name="agachamento" value="{{ ficha_treino.agachamento}}">
+                    </div>
+                    <div>
+                        <label for="legpress">Legpress:</label>
+                        <input type="text" id="legpress" name="legpress" value="{{ ficha_treino.legpress}}">
+                    </div>
+                    <div>
+                        <label for="cadeira_extensora">Cadeira extensora:</label>
+                        <input type="text" id="cadeira_extensora" name="cadeira_extensora" value="{{ ficha_treino.cadeira_extensora}}">
+                    </div>
+                    <div>
+                        <label for="cadeira_flexora">Cadeira flexora:</label>
+                        <input type="text" id="cadeira_flexora" name="cadeira_flexora" value="{{ ficha_treino.cadeira_flexora}}">
+                    </div>
+                    <div>
+                        <label for="panturrilhas">Panturrilhas:</label>
+                        <input type="text" id="panturrilhas" name="panturrilhas" value="{{ ficha_treino.panturrilhas}}">
+                    </div>
+                    <div>
+                        <label for="cardio">Cardio:</label>
+                        <input type="text" id="cardio" name="cardio" value="{{ ficha_treino.cardio}}">
+                    </div>
+                    <div>
+                        <label for="fitdance">Fit dance:</label>
+                        <input type="text" id="fitdance" name="fitdance" value="{{ ficha_treino.fitdance}}">
+                    </div>
+                    <div>
+                        <label for="luta">Luta:</label>
+                        <input type="text" id="luta" name="luta" value="{{ ficha_treino.luta}}">
+                    </div>
+                    <div>
+                        <input class="btn" type="submit" value="Atualizar Ficha">
+                    </div>
+                </form>
             </div>
             <div class="home-image">
                 <img src="../static/images/bg.jpg">

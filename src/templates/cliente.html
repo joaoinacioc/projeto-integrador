@@ -3,39 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Perfil do cliente</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
+    <script>
+        var urlExcluirConta = "{{ url_for('blueprint.excluir_conta') }}";
+        var cancelExConta = "{{ url_for('blueprint.cliente') }}";
+
+        // Função para confirmar a troca de plano
+        function confirmarTrocaPlano() {
+            var selectedPlano = document.getElementById("plano_mensal").value;
+            var confirmacao = confirm("Tem certeza de que deseja alterar para o plano " + selectedPlano + "?");
+
+            if (confirmacao) {
+                // Chamar a função para alterar o plano no servidor
+                alterarPlano(selectedPlano);
+            } else {
+                // Ação cancelada
+                console.log("Troca de plano cancelada.");
+            }
+        }
+    </script>
+
     <header class="header">
         <a href="/" class="logo">
             <i class="fas fa-dumbbell"></i>FitNess
         </a>
         <nav class="navbar">
-            <a href="/">Home</a>
+            <a href="/cliente">Home</a>
+            <a href="/logout-cliente" class="btn">Sair</a>
+            <button onclick="confirmarExclusao()">Excluir Conta</button>
         </nav>
     </header>
 
     <section class="home">
         <div class="max-width">
             <div class="home-content">
-                <h4>Consultar Ficha</h4>
-                <!-- Modificado para chamar a função para abrir a ficha de treino -->
-                <button class="btn" onclick="abrirFichaTreino()">Consultar</button>
+                <!-- Exibe o nome do cliente se estiver autenticado -->
+                {% if 'cliente_id' in session %}
+                    <h4>Olá, {{ cliente.nome }}!</h4>
+                {% endif %}
 
-                <!-- Adicione esta div para exibir a ficha de treino -->
+                <h4>Consultar Ficha</h4>
+                <button class="btn" onclick="abrirFichaTreino()">Consultar</button>
                 <div id="fichaTreinoDiv"></div>
 
                 <h4>Alterar Plano</h4>
-                <form method="put">
-                    <div>
-                        <label for="plano_mensal">Selecione um plano:</label>
-                        <select id="plano_mensal" name="plano_mensal">
-                            <option value="1">Básico</option>
-                            <option value="2">VIP</option>
-                        </select>
-                    </div>
-                </form>
+                <div>
+                    <label for="plano_mensal">Selecione um plano:</label>
+                    <select id="plano_mensal" name="plano_mensal">
+                        <option value="1">Básico</option>
+                        <option value="2">VIP</option>
+                    </select>
+                </div>
+                <!-- Adicione o botão para confirmar a troca de plano -->
+                <button class="btn" onclick="confirmarTrocaPlano()">Confirmar Troca de Plano</button>
             </div>
             <div class="home-image">
                 <img src="../static/images/bg.jpg">
@@ -43,13 +67,10 @@
         </div>
     </section>
 
-    <!-- Modificado para chamar a função para abrir a ficha de treino -->
     <script>
         function abrirFichaTreino() {
-            // Redirecionar para a página de ficha treino
             window.location.href = "/ficha_treino";
         }
     </script>
-    
 </body>
 </html>

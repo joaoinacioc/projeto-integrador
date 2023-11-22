@@ -1,7 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 
 from src.config import db
-
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 
 # Creating the Inserttable for inserting data into the database
 
@@ -34,17 +35,18 @@ class Ficha_Treino(db.Model):
     cadeira_flexora = db.Column(db.String(100))
     panturrilhas = db.Column(db.String(100))
     cardio = db.Column(db.String(100))
+    fitdance = db.Column(db.String(100))
     luta = db.Column(db.String(100), primary_key=False)
-    fk_Cliente_id_cliente = db.Column(db.Integer)
+    fk_Cliente_id_cliente = db.Column(db.Integer, ForeignKey('cliente.id_cliente', ondelete='CASCADE'))
+    cliente = relationship('Cliente', back_populates='fichas_treino')
 
 
-    def __init__(self, id_ficha,data_criacao, descricao, duracao_treino, ombro_lateral,
+    def __init__(self,data_criacao, descricao, duracao_treino, ombro_lateral,
                  ombro_frontal, supino_reto, supino_inclinado, crucifixo, puxador_frontal,
                  puxador_costas, remada_baixa, remada_cavalo, triceps_corda, triceps_pulley,
                  rosca_biceps, rosca_martelo, agachamento , legpress, cadeira_extensora,
-                 cadeira_flexora, panturrilhas, cardio, luta, fk_Cliente_id_cliente):
+                 cadeira_flexora, panturrilhas, cardio, fitdance, luta, fk_Cliente_id_cliente):
 
-        self.id_ficha =  id_ficha
         self.data_criacao = data_criacao
         self.descricao = descricao
         self.duracao_treino=duracao_treino
@@ -67,5 +69,6 @@ class Ficha_Treino(db.Model):
         self.cadeira_flexora=cadeira_flexora
         self.panturrilhas=panturrilhas
         self.cardio=cardio
+        self.fitdance=fitdance
         self.luta=luta
         self.fk_Cliente_id_cliente=fk_Cliente_id_cliente

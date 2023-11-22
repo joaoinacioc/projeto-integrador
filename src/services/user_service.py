@@ -71,3 +71,4 @@ def login_logic(email, senha):
 
     # Se o cliente existir, as credenciais são válidas
     return cliente is not None
+
