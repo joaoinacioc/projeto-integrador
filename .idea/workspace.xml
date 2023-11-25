@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b33f0523-681e-4876-b7d1-5e0ac53e2bb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projeto-integrador.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projeto-integrador.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/machine_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/machine_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/cliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/cliente.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ficha_treino.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ficha_treino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/cliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/ficha-treino.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/ficha-treino.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/instrutor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/instrutor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/login-instrutor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/login-instrutor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +62,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -98,6 +85,7 @@
       <workItem from="1699482036750" duration="2036000" />
       <workItem from="1699484267410" duration="2848000" />
       <workItem from="1700572723471" duration="10000" />
+      <workItem from="1700688246257" duration="61000" />
     </task>
     <servers />
   </component>
